@@ -1,0 +1,40 @@
+{
+  "name": "atelier-scientifique-2016",
+  "productName": "atelier-scientifique-2016",
+  "version": "0.0.0",
+  "description": "An application to use at an open doors.",
+  "license": "MIT",
+  "repository": "cedced19/atelier-scientifique-2016",
+  "author": {
+    "name": "Cédric JUNG",
+    "email": "cedced19@gmail.com",
+    "url": "cedced19.github.io"
+  },
+  "electronVersion": "0.36.0",
+  "scripts": {
+    "start": "electron ./",
+    "build": "gulp",
+    "build-linux64": "gulp dist-linux64",
+    "build-win": "gulp dist-win"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-local-storage": "^0.2.7",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "decompress-zip": "^0.2.0",
+    "electron-json-storage": "^2.0.0",
+    "is-there": "^4.3.1",
+    "ng-notie": "0.0.1",
+    "notie": "^2.1.0",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "electron-packager": "7.0.1",
+    "electron-prebuilt": "^0.36.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "gulp-zip": "^3.1.0"
+  }
+}

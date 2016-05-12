@@ -1,0 +1,18 @@
+<h1>Ajouter un participant</h1>
+<p>
+  Vous pouvez ajouter un participant ici grâce au formulaire papier qu'il a préalablement remplit.
+</p>
+<form name="formCreation">
+    <div class="input-group">
+        <label for="name">Nom:</label>
+        <input type="text" id="name" class="form-control" ng-disabled placeholder="Nom" ng-model="newPlayer.name">
+    </div>
+    <div class="input-group">
+        <label for="firstname">Prénom:</label>
+        <input type="text" id="firstName" class="form-control" ng-disabled placeholder="Prénom" ng-model="newPlayer.firstName">
+    </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" ng-disabled="formCreation.$pristine" ng-click="addPlayer()">Ajouter un participant</button>
+    </div>
+</form>

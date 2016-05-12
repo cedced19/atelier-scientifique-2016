@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Atelier scientifique</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="vendor/stylesheets/styles.css">
+    </head>
+    <body ng-app="AtelierScientifique">
+        <div class="site-container">
+            <div class="site-pusher">
+                <header class="header">
+                    <a class="header-icon" ng-click="$menu.show()"></a>
+                    <nav class="menu">
+                        <a ng-click="$menu.hide('/')" ng-class="{active: nav == 'home'}"><span class="fa fa-home"></span> Acceuil</a>
+                        <a ng-click="$menu.hide('/add-player')" ng-class="{active: nav == 'add-player'}"><span class="fa fa-user-plus"></span> Ajouter un participant</a>
+                        <a ng-click="$menu.hide('/random-players')" ng-class="{active: nav == 'random-players'}"><span class="fa fa-random"></span> Tirage au sort</a>
+                    </nav>
+                    <span class="header-logo">Atelier scientifique</span>
+                </header>
+
+                <div class="site-content">
+                    <div class="container" autoscroll="true" ng-view>
+                    </div>
+                </div>
+
+                <div class="site-cache" ng-click="$menu.hide()"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="vendor/javascripts/scripts.js"></script>
+    </body>
+</html>
