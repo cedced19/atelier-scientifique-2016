@@ -15,20 +15,22 @@
 
     <h2>Questions</h2>
 
-    <div ng-repeat="(qcmKey, qcmVal) in questions.qcms">
-      <p>{{qcmVal.sentence}}</p>
-      <div class="radio" ng-repeat="(answerKey, answerVal) in qcmVal.answers">
-        <label>
-          <input type="radio" name="ratio-{{qcmKey}}" value="{{answerKey}}" checked>
-          <b>{{answerKey + 1}}</b> - {{answerVal}}
-        </label>
+    <div ng-repeat="(questionKey, questionVal) in questions">
+      <div ng-if="questionVal.type == 'qcm'">
+        <p><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</p>
+        <div class="radio" ng-repeat="(answerKey, answerVal) in questionVal.answers">
+          <label>
+            <input type="radio" ng-model="questions[questionKey].user"value="{{answerKey}}" ng-disabled>
+            <b>{{answerKey + 1}}</b> - {{answerVal}}
+          </label>
+        </div>
       </div>
-    </div>
 
-    <div ng-repeat="(numberKey, numberVal) in questions.numbers">
-      <div class="input-group">
-          <label for="" class="no-bold">{{numberVal.sentence}}</label>
-          <input type="text" class="form-control" ng-disabled placeholder="{{numberVal.sentence}}">
+      <div ng-if="questionVal.type == 'number'">
+        <div class="input-group">
+            <label for="input-{questionKey}}" class="no-bold"><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</label>
+            <input type="text" class="form-control" id="input-{questionKey}}" ng-disabled placeholder="{{questionVal.sentence}}" ng-model="questions[questionKey].user" ng-disabled>
+        </div>
       </div>
     </div>
 
