@@ -7,11 +7,31 @@
         <label for="name">Nom:</label>
         <input type="text" id="name" class="form-control" ng-disabled placeholder="Nom" ng-model="newPlayer.name">
     </div>
+
     <div class="input-group">
         <label for="firstname">Prénom:</label>
         <input type="text" id="firstName" class="form-control" ng-disabled placeholder="Prénom" ng-model="newPlayer.firstName">
     </div>
+
+    <h2>Questions</h2>
+
+    <div ng-repeat="(qcmKey, qcmVal) in questions.qcms">
+      <p>{{qcmVal.sentence}}</p>
+      <div class="radio" ng-repeat="(answerKey, answerVal) in qcmVal.answers">
+        <label>
+          <input type="radio" name="ratio-{{qcmKey}}" value="{{answerKey}}" checked>
+          <b>{{answerKey + 1}}</b> - {{answerVal}}
+        </label>
+      </div>
     </div>
+
+    <div ng-repeat="(numberKey, numberVal) in questions.numbers">
+      <div class="input-group">
+          <label for="" class="no-bold">{{numberVal.sentence}}</label>
+          <input type="text" class="form-control" ng-disabled placeholder="{{numberVal.sentence}}">
+      </div>
+    </div>
+
     <div class="text-center">
         <button class="btn btn-success" ng-disabled="formCreation.$pristine" ng-click="addPlayer()">Ajouter un participant</button>
     </div>

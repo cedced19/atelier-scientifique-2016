@@ -38,6 +38,7 @@ app.run(['$rootScope', '$location', 'notie', function ($rootScope, $location, no
               }
             }
         };
+        $rootScope.questions = require('./questions.json');
         $rootScope.$error = function () {
           notie.alert(3, 'Quelque chose s\'est mal passé !', 3);
         };

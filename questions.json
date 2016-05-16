@@ -1,0 +1,20 @@
+[
+  {
+    "type": "qcm",
+    "sentence": "Quelle forêt offre le plus de diversité ?",
+    "answers": [
+      "La forêt 1",
+      "La forêt 2",
+      "La forêt 3"
+    ],
+    "verification": 0
+  },
+  {
+    "type": "number",
+    "sentence": "Quelle est la taille de cette arbre ?",
+    "verification":  {
+      "min": 20,
+      "max": 36
+    }
+  }
+]
