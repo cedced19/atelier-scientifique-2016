@@ -22,8 +22,26 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
             }
         ];
 
+        $rootScope.questions.forEach(function (item, key) {
+          fields.push({
+            label: `Question ${key + 1}  ` + item.sentence,
+            value: `questions[${key}].correct`,
+            default: 'NULL'
+          })
+        });
+
         $scope.saveCSV = function () {
-          json2csv({data: localStorageService.get('players'), fields: fields}, (err, csv) => {
+          var data = localStorageService.get('players');
+          data.forEach(function (player) {
+            player.questions.forEach(function (item, key) {
+              if (item.answer !== false && item.correct === true) {
+                player.questions[key].correct = 1;
+              } else {
+                player.questions[key].correct = 0;
+              }
+            })
+          });
+          json2csv({data: data, fields: fields}, (err, csv) => {
         		if (err) return $rootScope.error();
         		fs.writeFile(path.dirname(process.execPath) + '/players.csv', csv, (err) => {
         			if (err) return $rootScope.error();

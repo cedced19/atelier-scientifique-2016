@@ -21,7 +21,4 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
         } else {
           $scope.lastPlayer = false;
         }
-
-
-
 }];
