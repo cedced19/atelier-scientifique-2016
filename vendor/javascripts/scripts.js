@@ -15,6 +15,10 @@ app.config(['$routeProvider', 'localStorageServiceProvider', function($routeProv
             templateUrl: 'vendor/views/add-player.html',
             controller: 'AtelierScientifiqueAddPlayerCtrl'
         })
+        .when('/results-last-player', {
+            templateUrl: 'vendor/views/results-last-player.html',
+            controller: 'AtelierScientifiqueResultsLastPlayerCtrl'
+        })
         .when('/random-players', {
             templateUrl: 'vendor/views/random-players.html',
             controller: 'AtelierScientifiqueRandomPlayersCtrl'
@@ -45,4 +49,5 @@ app.run(['$rootScope', '$location', 'notie', function ($rootScope, $location, no
 }]);
 app.controller('AtelierScientifiqueHomeCtrl', require('./vendor/javascripts/controllers/home.js'));
 app.controller('AtelierScientifiqueAddPlayerCtrl', require('./vendor/javascripts/controllers/add-player.js'));
+app.controller('AtelierScientifiqueResultsLastPlayerCtrl', require('./vendor/javascripts/controllers/results-last-player.js'));
 app.controller('AtelierScientifiqueRandomPlayersCtrl', require('./vendor/javascripts/controllers/random-players.js'));

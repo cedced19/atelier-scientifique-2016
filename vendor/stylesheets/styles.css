@@ -230,6 +230,9 @@ label {
 .no-bold, .radio label {
 	font-weight: inherit;
 }
+.bold {
+	font-weight:700;
+}
 .form-control {
 	display:block;
 	width:100%;
@@ -445,6 +448,9 @@ textarea.form-control {
 .fa-user-plus:before {
 	content:"\f234"
 }
+.fa-user:before {
+	content:"\f007"
+}
 .fa-random:before {
 	content:"\f074"
 }
@@ -630,7 +636,7 @@ a {
 	color:#910000;
 	border-bottom:0
 }
-@media only screen and (max-width:750px) {
+@media only screen and (max-width:940px) {
 	.site-container,.site-pusher {
 		height:100%
 	}
@@ -691,7 +697,6 @@ a {
 	}
 	.menu a {
 		display:block;
-		height:40px;
 		padding-left:10%;
 		text-align:left;
 		line-height:40px;
