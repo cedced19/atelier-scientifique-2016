@@ -7,6 +7,7 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
 
 
         $scope.addPlayer = function () {
+          var totalCorrect = 0;
           $rootScope.questions.forEach(function (item, key) {
             if (!item.user || item.user == '') {
               return $scope.newPlayer.questions.push({
@@ -29,13 +30,17 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
               answer: item.user,
               correct: correct
             });
+            if (correct) {
+              totalCorrect++;
+            }
             $rootScope.questions[key].user = '';
           });
           var players = localStorageService.get('players');
           players.push({
             name: $scope.newPlayer.name,
             firstName: $scope.newPlayer.firstName,
-            questions: $scope.newPlayer.questions
+            questions: $scope.newPlayer.questions,
+            total: totalCorrect
           });
           localStorageService.set('players', players);
           notie.alert(1, 'Un nouveau participant a été ajouté.', 2);

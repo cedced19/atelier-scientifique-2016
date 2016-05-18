@@ -451,8 +451,8 @@ textarea.form-control {
 .fa-user:before {
 	content:"\f007"
 }
-.fa-random:before {
-	content:"\f074"
+.fa-pie-chart:before {
+	content:"\f200"
 }
 .popover {
 	position:absolute;

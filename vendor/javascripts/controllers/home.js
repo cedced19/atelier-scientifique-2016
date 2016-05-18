@@ -19,6 +19,11 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
               label: 'Prénom',
               value: 'firstName',
               default: 'NULL'
+            },
+            {
+              label: 'Nombre de questions réussites',
+              value: 'total',
+              default: 'NULL'
             }
         ];
 

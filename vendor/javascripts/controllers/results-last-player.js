@@ -5,19 +5,8 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
 
         if (players.length > 0) {
           $scope.lastPlayer = players[players.length-1];
-          $scope.total = {
-            right: 0,
-            total: 0
-          };
 
-          $scope.lastPlayer.questions.forEach(function (item) {
-            if (item.answer !== false) {
-              if (item.correct) {
-                $scope.total.right++;
-              }
-            }
-            $scope.total.total++;
-          });
+          $scope.total = $rootScope.questions.length;
         } else {
           $scope.lastPlayer = false;
         }

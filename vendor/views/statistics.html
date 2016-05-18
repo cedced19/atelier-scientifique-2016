@@ -1,0 +1,14 @@
+<h1>Statistiques</h1>
+<p>
+  Vous pouvez voir les statistiques à propos des questions, et des participants.
+</p>
+<div>
+  <h3>Questions avec le plus grand nombre de grandes réponses</h3>
+  <ul>
+    <li ng-repeat="answer in totalAnswers | orderBy:'-total'"><b>{{answer.id}})</b> {{answer.sentence}} avec <b>{{answer.total}}</b> bonne{{isPlural(answer.total)}} réponse{{isPlural(answer.total)}}.</li>
+  </ul>
+  <h3>Classement des participants</h3>
+  <ol>
+    <li ng-repeat="player in players | orderBy:'-total' | limitTo:30">{{player.name}} {{player.firstName}} avec <b>{{player.total}}</b> bonne{{isPlural(player.total)}} réponse{{isPlural(player.total)}}.</li>
+  </ol>
+</div>

@@ -1,7 +1,7 @@
 <h1>Résultats du dernier participant</h1>
 <div ng-if="lastPlayer">
   <p>
-    Vous trouverez ici les résultats du dernier participant: <b>{{lastPlayer.name}} {{lastPlayer.firstName}}</b> qui a fait un résultat de <b>{{total.right}}/{{total.total}}</b>.
+    Vous trouverez ici les résultats du dernier participant: <b>{{lastPlayer.name}} {{lastPlayer.firstName}}</b> qui a fait un résultat de <b>{{lastPlayer.total}}/{{total}}</b>.
   </p>
   <div ng-repeat="(questionKey, questionVal) in questions">
     <p><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</p>
