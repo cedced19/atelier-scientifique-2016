@@ -20,7 +20,7 @@
         <p><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</p>
         <div class="radio" ng-repeat="(answerKey, answerVal) in questionVal.answers">
           <label>
-            <input type="radio" ng-model="questions[questionKey].user"value="{{answerKey}}" ng-disabled>
+            <input type="radio" ng-model="questions[questionKey].user" value="{{answerKey}}" ng-disabled>
             <b>{{answerKey + 1}}</b> - {{answerVal}}
           </label>
         </div>
