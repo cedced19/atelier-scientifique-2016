@@ -8,6 +8,15 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
 
         $scope.addPlayer = function () {
           var totalCorrect = 0;
+
+          if (!$scope.newPlayer.name || $scope.newPlayer.name == '') {
+            return notie.alert(3, 'Vous devez donner un nom.', 3);
+          }
+
+          if (!$scope.newPlayer.firstName || $scope.newPlayer.firstName == '') {
+            return notie.alert(3, 'vous devez donnez un prénom.', 3);
+          }
+
           $rootScope.questions.forEach(function (item, key) {
             if (!item.user || item.user == '') {
               return $scope.newPlayer.questions.push({
@@ -16,9 +25,18 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
             }
 
             var correct = false;
+
             if (item.type == 'qcm') {
-              if (item.user == item.verification) {
-                correct = true;
+              if (Array.isArray(item.verification)) {
+                item.verification.forEach(function (verification) {
+                  if (item.user == verification) {
+                    correct = true;
+                  }
+                });
+              } else {
+                if (item.user == item.verification) {
+                  correct = true;
+                }
               }
             }
             if (item.type == 'number') {

@@ -6,9 +6,19 @@
   <div ng-repeat="(questionKey, questionVal) in questions">
     <p><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</p>
     <div ng-if="questionVal.type == 'qcm'">
-      <ol>
-        <li ng-repeat="(answerKey, answerVal) in questionVal.answers" ng-class="{bold: answerKey == questionVal.verification}">{{answerVal}}</li>
-      </ol>
+
+      <div ng-if="!isArray(questionVal.verification)">
+        <ol>
+          <li ng-repeat="(answerKey, answerVal) in questionVal.answers" ng-class="{bold: answerKey == questionVal.verification}">{{answerVal}}</li>
+        </ol>
+      </div>
+
+      <div ng-if="isArray(questionVal.verification)">
+        <ol>
+          <li ng-repeat="(answerKey, answerVal) in questionVal.answers" ng-class="{bold: isVerification(questionVal.verification, answerKey)}">{{answerVal}}</li>
+        </ol>
+      </div>
+
       <p ng-if="lastPlayer.questions[questionKey].answer !== false">
         La réponse donné par l'utilisateur est "<b>{{questionVal.answers[lastPlayer.questions[questionKey].answer]}}</b>".
       </p>

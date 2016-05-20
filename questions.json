@@ -1,13 +1,23 @@
 [
   {
     "type": "qcm",
-    "sentence": "Quelle forêt offre le plus de diversité ?",
+    "sentence": "Parmis ces trois parcelles, quelle est selon vous celle qui est la plus propice à la biodiversité ?",
     "answers": [
-      "La forêt 1",
-      "La forêt 2",
-      "La forêt 3"
+      "La parcelle 1",
+      "La parcelle 2",
+      "La parcelle 3"
     ],
-    "verification": 0
+    "verification": [0, 2]
+  },
+  {
+    "type": "qcm",
+    "sentence": "Parmis ces trois parcelles, quelle est selon vous celle qui est la moins propice à la biodiversité ?",
+    "answers": [
+      "La parcelle 1",
+      "La parcelle 2",
+      "La parcelle 3"
+    ],
+    "verification": 1
   },
   {
     "type": "number",

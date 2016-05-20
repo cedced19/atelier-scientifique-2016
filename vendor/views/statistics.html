@@ -3,7 +3,7 @@
   Vous pouvez voir les statistiques à propos des questions, et des participants.
 </p>
 <div>
-  <h3>Questions avec le plus grand nombre de grandes réponses</h3>
+  <h3>Questions avec le plus grand nombre de bonnes réponses</h3>
   <ul>
     <li ng-repeat="answer in totalAnswers | orderBy:'-total'"><b>{{answer.id}})</b> {{answer.sentence}} avec <b>{{answer.total}}</b> bonne{{isPlural(answer.total)}} réponse{{isPlural(answer.total)}}.</li>
   </ul>
