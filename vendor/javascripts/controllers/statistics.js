@@ -23,17 +23,21 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
 
         $scope.players.forEach(function (player) {
           player.questions.forEach(function (question, key) {
-            if (question.correct) {
               if (isInside(key)) {
-                $scope.totalAnswers[key].total++;
+                if (question.correct) {
+                  $scope.totalAnswers[key].total++;
+                }
               } else {
+                var total = 0;
+                if (question.correct) {
+                  total = 1;
+                }
                 $scope.totalAnswers.push({
-                  total: 1,
+                  total: total,
                   sentence: $rootScope.questions[key].sentence,
                   id: key + 1
                 });
-              }
-            }
+             }
           });
         });
 
