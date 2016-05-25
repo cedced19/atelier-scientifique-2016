@@ -18,13 +18,27 @@ module.exports = ['$scope', '$location', '$rootScope', 'localStorageService', 'n
           }
 
           $rootScope.questions.forEach(function (item, key) {
-            if (!item.user || item.user == '') {
+            if ((!item.user || item.user == '') && item.type != 'word') {
               return $scope.newPlayer.questions.push({
                 answer: false
               });
             }
 
             var correct = false;
+
+            if (item.type == 'word') {
+              if (item.user.right) {
+                correct = true;
+                item.user = item.verification;
+              } else if (item.user.other || item.user.other != '') {
+                item.user = item.user.other;
+              } else {
+                return $scope.newPlayer.questions.push({
+                  answer: false
+                });
+              }
+            }
+
 
             if (item.type == 'qcm') {
               if (Array.isArray(item.verification)) {

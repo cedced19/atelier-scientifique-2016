@@ -28,10 +28,23 @@
 
       <div ng-if="questionVal.type == 'number'">
         <div class="input-group">
-            <label for="input-{questionKey}}" class="no-bold"><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</label>
-            <input type="text" class="form-control" id="input-{questionKey}}" ng-disabled placeholder="{{questionVal.sentence}}" ng-model="questions[questionKey].user" ng-disabled>
+            <label for="input-{{questionKey}}" class="no-bold"><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</label>
+            <input type="text" class="form-control" id="input-{{questionKey}}" ng-disabled placeholder="{{questionVal.sentence}}" ng-model="questions[questionKey].user" ng-disabled>
         </div>
       </div>
+
+      <div ng-if="questionVal.type == 'word'">
+        <p><b>{{questionKey + 1}})</b> {{questionVal.sentence}}</p>
+        <div class="input-group">
+            <label for="input-{{questionKey}}-right" class="no-bold">
+              <input type="checkbox" id="input-{{questionKey}}-right" ng-disabled ng-model="questions[questionKey].user.right" ng-click="questions[questionKey].user.other = '';"> {{questionVal.verification}}
+            </label>
+            <br>
+            <label for="input-{{questionKey}}-other" class="no-bold">Autres réponses:</label>
+            <input type="text" class="form-control" id="input-{{questionKey}}-other" ng-disabled placeholder="Autres réponses" ng-model="questions[questionKey].user.other" ng-disabled ng-keyup="questions[questionKey].user.right = false;">
+        </div>
+      </div>
+      <br>
     </div>
 
     <div class="text-center">

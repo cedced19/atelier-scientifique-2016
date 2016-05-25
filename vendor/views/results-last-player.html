@@ -22,9 +22,24 @@
           Le nombre donné par l'utilisateur est <b>{{lastPlayer.questions[questionKey].answer}}.</b>
         </p>
     </div>
+
+    <div ng-if="questionVal.type == 'word'">
+        <p>
+          La bonne réponse était <b>{{questionVal.verification}}</b>.
+        </p>
+        <p ng-if="lastPlayer.questions[questionKey].answer">
+          Le nombre donné par l'utilisateur est <b>{{lastPlayer.questions[questionKey].answer}}.</b>
+        </p>
+    </div>
+
     <p ng-if="lastPlayer.questions[questionKey].answer === false">
-      <b>Aucune</b> réponse a été choisit par l'utilisateur.
+      <b class="error">Aucune</b> réponse a été choisit par l'utilisateur.
     </p>
+
+    <p>
+      La réponse de l'utilisateur est <b class="error" ng-if="lastPlayer.questions[questionKey].correct === false && lastPlayer.questions[questionKey].answer">fausse</b><b class="success" ng-if="lastPlayer.questions[questionKey].correct === true">juste</b>.
+    </p>
+    <br>
   </div>
 </div>
 <div ng-if="!lastPlayer">

@@ -20,11 +20,36 @@
     "verification": 1
   },
   {
+    "type": "qcm",
+    "sentence": "Quelle est l'écorce se trouvant dans: la boîte numéro 1 ?",
+    "answers": [
+      "L'écorse 1",
+      "L'écorse 2",
+      "L'écorse 3"
+    ],
+    "verification": 0
+  },
+  {
+    "type": "qcm",
+    "sentence": "Quelle est l'écorce se trouvant dans: la boîte numéro 2 ?",
+    "answers": [
+      "L'écorse 1",
+      "L'écorse 2",
+      "L'écorse 3"
+    ],
+    "verification": 1
+  },
+  {
     "type": "number",
     "sentence": "Quelle est la taille de cette arbre ?",
     "verification":  {
       "min": 20,
       "max": 36
     }
+  },
+  {
+    "type": "word",
+    "sentence": "Quel est le nom de cette fourmi ?",
+    "verification": "Fourmi transparente"
   }
 ]

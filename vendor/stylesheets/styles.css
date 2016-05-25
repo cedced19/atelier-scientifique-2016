@@ -406,6 +406,9 @@ textarea.form-control {
 .error {
 	color:#e74c3c
 }
+.success {
+	color: #01a024;
+}
 .btn-toolbar:after,.btn-toolbar:before {
 	display:table;
 	content:" "
