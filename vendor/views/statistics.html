@@ -9,6 +9,6 @@
   </ul>
   <h3>Classement des participants</h3>
   <ol>
-    <li ng-repeat="player in players | orderBy:'-total' | limitTo:30">{{player.name}} {{player.firstName}} avec <b>{{player.total}}</b> bonne{{isPlural(player.total)}} réponse{{isPlural(player.total)}}.</li>
+    <li ng-repeat="player in players | orderBy:'-total' | limitTo:90">{{player.name}} {{player.firstName}} avec <b>{{player.total}}</b> bonne{{isPlural(player.total)}} réponse{{isPlural(player.total)}}.</li>
   </ol>
 </div>

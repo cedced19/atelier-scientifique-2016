@@ -1,7 +1,7 @@
 [
   {
     "type": "qcm",
-    "sentence": "Parmis ces trois parcelles, quelle est selon vous celle qui est la plus propice à la biodiversité ?",
+    "sentence": "Parmi ces trois parcelles, quelle est selon vous celle qui est la plus propice à la biodiversité ?",
     "answers": [
       "La parcelle 1",
       "La parcelle 2",
@@ -11,7 +11,7 @@
   },
   {
     "type": "qcm",
-    "sentence": "Parmis ces trois parcelles, quelle est selon vous celle qui est la moins propice à la biodiversité ?",
+    "sentence": "Parmi ces trois parcelles, quelle est selon vous celle qui est la moins propice à la biodiversité ?",
     "answers": [
       "La parcelle 1",
       "La parcelle 2",
@@ -23,33 +23,62 @@
     "type": "qcm",
     "sentence": "Quelle est l'écorce se trouvant dans: la boîte numéro 1 ?",
     "answers": [
-      "L'écorse 1",
-      "L'écorse 2",
-      "L'écorse 3"
+      "L'écorce 1",
+      "L'écorce 2",
+      "L'écorce 3",
+      "L'écorce 4"
     ],
-    "verification": 0
+    "verification": 3
   },
   {
     "type": "qcm",
     "sentence": "Quelle est l'écorce se trouvant dans: la boîte numéro 2 ?",
     "answers": [
-      "L'écorse 1",
-      "L'écorse 2",
-      "L'écorse 3"
+      "L'écorce 1",
+      "L'écorce 2",
+      "L'écorce 3",
+      "L'écorce 4"
     ],
     "verification": 1
   },
   {
     "type": "number",
-    "sentence": "Quelle est la taille de cette arbre ?",
+    "sentence": "Quel est l'âge cet arbre ?",
     "verification":  {
-      "min": 20,
-      "max": 36
+      "min": 25,
+      "max": 35
+    }
+  },
+  {
+    "type": "number",
+    "sentence": "Quel est le diamètre cet arbre ?",
+    "verification":  {
+      "min": 43,
+      "max": 49
+    }
+  },
+  {
+    "type": "number",
+    "sentence": "Quelle est la taille de cet arbre ?",
+    "verification":  {
+      "min": 250,
+      "max": 260
     }
   },
   {
     "type": "word",
-    "sentence": "Quel est le nom de cette fourmi ?",
-    "verification": "Fourmi transparente"
+    "sentence": "Quel est le nom de cet insecte ? ",
+    "verification": "Taupin (Ampedus cinnabarinus)"
+  },
+  {
+    "type": "qcm",
+    "sentence": "Qu'y a-t-il dans le bocal ?",
+    "answers": [
+      "Physe",
+      "Gammare",
+      "Fourreau",
+      "Larves d'éphémère"
+    ],
+    "verification": 2
   }
 ]

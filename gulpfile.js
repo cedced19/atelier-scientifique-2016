@@ -15,7 +15,7 @@ gulp.task('dist-win', ['clean'], function () {
     packager({
       arch: 'x64',
       platform: 'win32',
-      icon: 'favicon.ico', // Don't use this option if you are using Linux
+      // icon: 'favicon.ico', Don't use this option if you are using Linux
       name: pkg.productName,
       overwrite: true,
       dir: './',
