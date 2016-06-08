@@ -1,0 +1,11 @@
+{
+  "name": "atelier-scientifique-2016-statistics",
+  "version": "0.0.0",
+  "description": "Get some statistics form players' data.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "exists-file": "^2.0.0"
+  }
+}

@@ -2,3 +2,5 @@ node_modules/
 minified/
 dist/
 build/
+statistics/players.json
+statistics/node_modules/

@@ -15,7 +15,8 @@
     "start": "electron ./",
     "build": "gulp",
     "build-linux64": "gulp dist-linux64",
-    "build-win": "gulp dist-win"
+    "build-win": "gulp dist-win",
+    "stats": "node ./statistics/index.js"
   },
   "dependencies": {
     "angular": "^1.5.5",
